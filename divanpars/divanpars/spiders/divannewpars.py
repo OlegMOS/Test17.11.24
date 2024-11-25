@@ -1,6 +1,5 @@
 import scrapy
 
-
 class DivannewparsSpider(scrapy.Spider):
     name = "divannewpars"
     allowed_domains = ["divan.ru"]
