@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Заполните анкету</h1>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Город</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="hobby">Хобби</label>
+                <input type="text" class="form-control" id="hobby" name="hobby" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+
+        {% if user_data %}
+            <h2 class="mt-5">Введенные данные:</h2>
+            <ul>
+                <li><strong>Имя:</strong> {{ user_data.name }}</li>
+                <li><strong>Город:</strong> {{ user_data.city }}</li>
+                <li><strong>Хобби:</strong> {{ user_data.hobby }}</li>
+                <li><strong>Возраст:</strong> {{ user_data.age }}</li>
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
