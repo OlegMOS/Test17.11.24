@@ -7,7 +7,7 @@ def home():
     context = {
         "link": "Перейти на главную страницу"
     }
-    return render_template("home.html", **context)
+    return render_template("home_account.html", **context)
 
 @app.route("/about.html")
 def about():
